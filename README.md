@@ -24,7 +24,7 @@ csv 파일: https://mybox.naver.com/main/web/my?resourceKey=cnVkdGpxMDUwOXwzNDcy
 ├── 🌟final3.pkl             # 학습된 CatBoost 모델
 ├── requirements.txt         # Python 패키지 목록
 ├── apply.ipynb              # 모델 적용 실험
-├── convert.ipynb            # 데이터 변환
+├── conver/convert.ipynb     # 데이터 변환
 ├── final_merge.ipynb        # 데이터 병합
 └── 모델_선정/                # 모델 선정 과정
     ├── feature_selection_pipeline.py
