@@ -12,6 +12,7 @@ PCAP 파일에서 네트워크 Flow 특성을 추출하고, 학습된 CatBoost �
 - 클래스별 예측 확률 계산
 - LLM 연동을 위한 NETWORK JSON 결과 생성
 
+csv 파일: https://mybox.naver.com/main/web/my?resourceKey=cnVkdGpxMDUwOXwzNDcyNTk3MDA0NTA5NTE0ODMyfER8MA
 ```
 ## 프로젝트 구조
 
