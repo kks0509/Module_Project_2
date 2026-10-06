@@ -1,0 +1,8 @@
+﻿*.csv
+__pycache__/
+*.pyc
+.uv-cache/
+catboost_info/
+output/
+.ipynb_checkpoints/
+.env
