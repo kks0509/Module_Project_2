@@ -1,0 +1,6 @@
+# python -m pip install -r requirements.txt 하시면 됩니다!
+
+catboost==1.2.10
+cicflowmeter==0.5.0
+pandas==3.0.5
+scapy==2.7.0
