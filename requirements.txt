@@ -1,0 +1,7 @@
+# 새 패키지를 쓰면 본인이 여기에 한 줄 추가하고 커밋해주세요.
+# 설치:  pip install -r requirements.txt
+
+catboost==1.2.10
+cicflowmeter==0.5.0
+pandas==3.0.5
+scapy==2.7.0
