@@ -1,0 +1,40 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+
+<h2>{{ student.name }} 학생 정보</h2>
+
+<div class="card">
+
+    <p>학번: {{ student.student_no }}</p>
+    <p>학과: {{ student.department }}</p>
+    <p>이메일: {{ student.email }}</p>
+    <p>전화번호: {{ student.phone }}</p>
+
+</div>
+
+<h3>성적</h3>
+
+<table>
+
+    <tr>
+        <th>과목</th>
+        <th>교수</th>
+        <th>점수</th>
+        <th>등급</th>
+    </tr>
+
+    {% for grade in grades %}
+
+    <tr>
+        <td>{{ grade.course_name }}</td>
+        <td>{{ grade.professor }}</td>
+        <td>{{ grade.score }}</td>
+        <td>{{ grade.letter_grade }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

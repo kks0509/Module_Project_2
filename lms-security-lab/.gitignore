@@ -1,0 +1,8 @@
+.env
+*.env
+nginx/.htpasswd
+__pycache__/
+*.pyc
+.pytest_cache/
+.vscode/
+.idea/

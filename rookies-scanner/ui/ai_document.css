@@ -1,0 +1,32 @@
+.rookies-report { max-width: 860px; margin: 24px auto; padding: 52px 64px; background: #fff; color: #1f2937; border: 1px solid #e0e5e9; box-shadow: 0 6px 28px #172b3a0d; font-family: "Noto Sans KR", "Malgun Gothic", sans-serif; font-size: 15px; line-height: 1.85; overflow-wrap: anywhere; }
+.rookies-report * { box-sizing: border-box; }
+.rookies-report .report-header { text-align: center; border-bottom: 3px solid #204d40; padding-bottom: 24px; margin-bottom: 24px; }
+.rookies-report .report-brand { font-size: 18px; font-weight: 750; letter-spacing: .08em; color: #204d40; }
+.rookies-report h1 { font-size: 28px; line-height: 1.5; font-weight: 750; color: #172e28; margin: 12px 0; padding: 0; }
+.rookies-report h2 { font-size: 22px; font-weight: 750; color: #172e28; margin: 0 0 20px; padding: 0; }
+.rookies-report h3 { font-size: 18px; font-weight: 700; color: #1f2937; margin: 24px 0 14px; padding: 0; }
+.rookies-report h4 { font-size: 15px; font-weight: 700; color: #204d40; margin: 24px 0 8px; padding: 0; }
+.rookies-report p { margin: 0 0 14px; line-height: 1.85; color: #1f2937; }
+.rookies-report small, .rookies-report .report-label { font-size: 12px; font-weight: 400; color: #52645d; }
+.rookies-report .report-note { font-size: 13px; color: #52645d; margin: 18px 0; }
+.rookies-report section { scroll-margin-top: 80px; border-top: 1px solid #dce3df; margin-top: 32px; padding-top: 28px; }
+.rookies-report .report-finding { margin-top: 28px; padding-top: 8px; }
+.rookies-report .report-facts { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; table-layout: fixed; }
+.rookies-report caption { text-align: left; font-size: 12px; color: #52645d; padding-bottom: 6px; }
+.rookies-report th, .rookies-report td { text-align: left; vertical-align: top; border-bottom: 1px solid #edf0ee; padding: 7px 10px; color: #1f2937; }
+.rookies-report th { width: 29%; font-weight: 600; background: #f7f9f8; }
+.rookies-report .report-toc { border-top: 1px solid #dce3df; margin-top: 24px; padding-top: 24px; }
+.rookies-report .report-toc ol { list-style: none; margin: 0; padding: 0; }
+.rookies-report .report-toc ol ol { padding-left: 24px; font-size: 14px; }
+.rookies-report .report-toc a { color: #245847; text-decoration: none; }
+.rookies-report .report-toc a:hover { text-decoration: underline; }
+.rookies-report .report-toc a:focus-visible { outline: 2px solid #25854a; outline-offset: 3px; }
+.rookies-report .report-severity { font-size: 14px; font-weight: 600; }
+.rookies-report .report-severity span { display: inline-block; margin-left: 10px; border-radius: 4px; padding: 1px 10px; font-size: 12px; letter-spacing: .03em; }
+.rookies-report .severity-high { color: #972b34; background: #fce9eb; }
+.rookies-report .severity-medium { color: #835009; background: #fff1d6; }
+.rookies-report .severity-low { color: #315738; background: #ebf3eb; }
+.rookies-report .severity-info { color: #33546d; background: #eaf1f8; }
+.rookies-report footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #dce3df; text-align: center; font-size: 12px; color: #52645d; }
+@media (max-width: 700px) { .rookies-report { padding: 28px 20px; margin: 12px auto; font-size: 14px; } .rookies-report h1 { font-size: 23px; } .rookies-report h2 { font-size: 20px; } .rookies-report th { width: 34%; } }
+@media print { .rookies-report { max-width: none; margin: 0; padding: 0; border: 0; box-shadow: none; } .rookies-report .report-finding h3 { break-after: avoid; } .rookies-report table, .rookies-report h4 { break-inside: avoid; } }

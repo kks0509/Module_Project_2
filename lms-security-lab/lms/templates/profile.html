@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+내 정보
+{% endblock %}
+
+{% block page_header %}
+내 정보
+{% endblock %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h3>내 정보</h3>
+
+    <p>
+        등록된 학생 개인정보를 확인합니다.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <table>
+
+        <tr>
+            <th>학번</th>
+            <td>{{ student.student_no }}</td>
+        </tr>
+
+        <tr>
+            <th>이름</th>
+            <td>{{ student.name }}</td>
+        </tr>
+
+        <tr>
+            <th>학과</th>
+            <td>{{ student.department }}</td>
+        </tr>
+
+        <tr>
+            <th>이메일</th>
+            <td>{{ student.email }}</td>
+        </tr>
+
+        <tr>
+            <th>전화번호</th>
+            <td>{{ student.phone }}</td>
+        </tr>
+
+    </table>
+
+</div>
+
+{% endblock %}

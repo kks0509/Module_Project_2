@@ -1,0 +1,4 @@
+# The team's native CatBoost model and CICFlowMeter version. Internal requirements stay separate.
+catboost==1.2.10
+cicflowmeter==0.5.0
+scapy==2.7.0

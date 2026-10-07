@@ -1,0 +1,232 @@
+{% extends "admin_base.html" %}
+
+{% block title %}
+학생 관리
+{% endblock %}
+
+{% block page_header %}
+학생 관리
+{% endblock %}
+
+{% block content %}
+
+<div class="page-title">
+    <h3>학생 관리</h3>
+
+    <p>
+        등록된 학생 정보를 검색하고 상세 정보를 확인할 수 있습니다.
+    </p>
+</div>
+
+
+<!-- 학생 검색 -->
+
+<div class="card" style="margin-bottom: 20px;">
+
+    <div class="section-title">
+        학생 검색
+    </div>
+
+    <form method="GET">
+
+        <div style="
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        ">
+
+            <input
+                type="text"
+                name="keyword"
+                value="{{ keyword }}"
+                placeholder="학번, 이름 또는 학과를 입력하세요"
+            >
+
+            <button
+                type="submit"
+                class="btn"
+                style="
+                    width: 100px;
+                    flex-shrink: 0;
+                "
+            >
+                검색
+            </button>
+
+
+            {% if keyword %}
+
+            <a
+                href="/admin/students"
+                class="btn btn-secondary"
+                style="
+                    width: 100px;
+                    flex-shrink: 0;
+                    text-align: center;
+                "
+            >
+                초기화
+            </a>
+
+            {% endif %}
+
+        </div>
+
+    </form>
+
+</div>
+
+
+<!-- 학생 목록 -->
+
+<div class="card">
+
+    <div style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+    ">
+
+        <div
+            class="section-title"
+            style="margin-bottom: 0;"
+        >
+            학생 목록
+        </div>
+
+
+        {% if keyword %}
+
+        <div style="
+            color: #64748b;
+            font-size: 14px;
+        ">
+            검색 결과 {{ students|length }}명
+        </div>
+
+        {% endif %}
+
+    </div>
+
+
+    <div style="overflow-x: auto;">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>학번</th>
+                    <th>이름</th>
+                    <th>학과</th>
+                    <th>이메일</th>
+                    <th style="width: 100px;">
+                        관리
+                    </th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <!-- 검색 결과가 존재하는 경우 -->
+
+                {% if students %}
+
+                    {% for student in students %}
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                {{ student.student_no }}
+                            </strong>
+                        </td>
+
+                        <td>
+                            {{ student.name }}
+                        </td>
+
+                        <td>
+                            {{ student.department }}
+                        </td>
+
+                        <td>
+                            {{ student.email }}
+                        </td>
+
+                        <td>
+
+                            <a
+                                href="/admin/students/{{ student.id }}"
+                                class="btn"
+                                style="
+                                    padding: 7px 12px;
+                                    font-size: 13px;
+                                "
+                            >
+                                상세
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+
+                <!-- 검색은 했지만 결과가 없는 경우 -->
+
+                {% elif keyword %}
+
+                    <tr>
+
+                        <td
+                            colspan="5"
+                            style="
+                                text-align: center;
+                                padding: 50px;
+                                color: #94a3b8;
+                            "
+                        >
+                            검색 결과가 없습니다.
+                        </td>
+
+                    </tr>
+
+
+                <!-- 검색하지 않은 최초 화면 -->
+
+                {% else %}
+
+                    <tr>
+
+                        <td
+                            colspan="5"
+                            style="
+                                text-align: center;
+                                padding: 60px;
+                                color: #94a3b8;
+                            "
+                        >
+
+                            학생 정보를 조회하려면
+                            학번, 이름 또는 학과를 검색하세요.
+
+                        </td>
+
+                    </tr>
+
+                {% endif %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

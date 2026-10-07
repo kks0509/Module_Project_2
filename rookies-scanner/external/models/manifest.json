@@ -1,0 +1,13 @@
+{
+  "original": "final4.pkl",
+  "original_sha256": "dce2942e13f16e6c761601d6e36348f3398faa5b4287ab8e141eed9dd59ef0e6",
+  "file": "final4.pkl",
+  "sha256": "dce2942e13f16e6c761601d6e36348f3398faa5b4287ab8e141eed9dd59ef0e6",
+  "format": "pickle",
+  "classes": [
+    "BENIGN",
+    "BRUTE FORCE",
+    "DOS"
+  ],
+  "feature_count": 62
+}

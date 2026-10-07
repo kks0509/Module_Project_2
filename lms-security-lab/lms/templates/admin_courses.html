@@ -1,0 +1,234 @@
+{% extends "admin_base.html" %}
+
+{% block title %}
+강의 관리
+{% endblock %}
+
+{% block page_header %}
+강의 관리
+{% endblock %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h3>강의 관리</h3>
+
+    <p>
+        LMS에서 운영되는 강의를 등록하고 조회할 수 있습니다.
+    </p>
+
+</div>
+
+
+<div class="card" style="margin-bottom: 20px;">
+
+    <div class="section-title">
+        새 강의 등록
+    </div>
+
+
+    {% if error %}
+
+    <div style="
+        margin-bottom: 18px;
+        padding: 13px 15px;
+        border-radius: 10px;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #b91c1c;
+        font-size: 14px;
+    ">
+        {{ error }}
+    </div>
+
+    {% endif %}
+
+
+    <form method="POST">
+
+        <div style="
+            display: grid;
+            grid-template-columns: 1fr 2fr 1.3fr auto;
+            gap: 12px;
+            align-items: end;
+        ">
+
+            <div>
+
+                <label style="
+                    display: block;
+                    margin-bottom: 7px;
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #475569;
+                ">
+                    과목 코드
+                </label>
+
+                <input
+                    name="course_code"
+                    placeholder="예: SEC301"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label style="
+                    display: block;
+                    margin-bottom: 7px;
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #475569;
+                ">
+                    과목명
+                </label>
+
+                <input
+                    name="course_name"
+                    placeholder="과목명을 입력하세요"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label style="
+                    display: block;
+                    margin-bottom: 7px;
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #475569;
+                ">
+                    담당 교수
+                </label>
+
+                <input
+                    name="professor"
+                    placeholder="담당 교수"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <button
+                    type="submit"
+                    class="btn"
+                    style="
+                        height: 42px;
+                        min-width: 90px;
+                    "
+                >
+                    등록
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+<div class="card">
+
+    <div style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+    ">
+
+        <div class="section-title" style="margin-bottom: 0;">
+            강의 목록
+        </div>
+
+        <div style="
+            color: #64748b;
+            font-size: 14px;
+        ">
+            총 {{ courses|length }}개
+        </div>
+
+    </div>
+
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th style="width: 180px;">
+                    과목 코드
+                </th>
+
+                <th>
+                    과목명
+                </th>
+
+                <th style="width: 220px;">
+                    담당 교수
+                </th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% if courses %}
+
+                {% for course in courses %}
+
+                <tr>
+
+                    <td>
+                        <strong>
+                            {{ course.course_code }}
+                        </strong>
+                    </td>
+
+                    <td>
+                        {{ course.course_name }}
+                    </td>
+
+                    <td>
+                        {{ course.professor }}
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            {% else %}
+
+                <tr>
+                    <td
+                        colspan="3"
+                        style="
+                            text-align: center;
+                            padding: 40px;
+                            color: #94a3b8;
+                        "
+                    >
+                        등록된 강의가 없습니다.
+                    </td>
+                </tr>
+
+            {% endif %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

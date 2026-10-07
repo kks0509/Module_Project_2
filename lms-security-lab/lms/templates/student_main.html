@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}
+학생 Dashboard
+{% endblock %}
+
+{% block page_header %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h3>
+        {{ student.name }}님, 안녕하세요.
+    </h3>
+
+    <p>
+        학습 현황과 주요 정보를 확인할 수 있습니다.
+    </p>
+
+</div>
+
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+
+        <div class="label">
+            학번
+        </div>
+
+        <div class="value"
+             style="font-size:24px;">
+            {{ student.student_no }}
+        </div>
+
+        <div class="sub">
+            학생 식별 번호
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="label">
+            소속 학과
+        </div>
+
+        <div class="value"
+             style="font-size:22px;">
+            {{ student.department }}
+        </div>
+
+        <div class="sub">
+            현재 소속 학과
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="label">
+            수강 강의
+        </div>
+
+        <div class="value">
+            {{ course_count }}
+        </div>
+
+        <div class="sub">
+            현재 수강 중인 강의
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="two-column">
+
+    <!-- 공지 -->
+
+    <div class="card">
+
+        <div class="section-title">
+            최근 공지사항
+        </div>
+
+        {% if notices %}
+
+            {% for notice in notices %}
+
+            <div class="notice-item">
+
+                <div class="notice-title">
+                    {{ notice.title }}
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p style="color:#94a3b8;">
+                등록된 공지사항이 없습니다.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+
+    <!-- 빠른 이동 -->
+
+    <div class="card">
+
+        <div class="section-title">
+            빠른 이동
+        </div>
+
+
+        <div class="quick-links">
+
+            <a
+                href="/student/profile"
+                class="quick-link"
+            >
+                내 정보 확인
+            </a>
+
+            <a
+                href="/student/grades"
+                class="quick-link"
+            >
+                성적 조회
+            </a>
+
+            <a
+                href="/student/courses"
+                class="quick-link"
+            >
+                강의 검색
+            </a>
+
+            <a
+                href="/student/notices"
+                class="quick-link"
+            >
+                공지사항 확인
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

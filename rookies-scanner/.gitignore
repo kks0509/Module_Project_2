@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+reports/
+dist/
+build/
+*.spec
+.install-tmp/
+.test-tmp/
+.env
+.env.*
+!.env.example

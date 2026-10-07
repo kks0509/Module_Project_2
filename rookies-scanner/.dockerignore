@@ -1,0 +1,12 @@
+.venv
+.env
+.env.*
+!.env.example
+reports
+__pycache__
+**/__pycache__
+.test-tmp
+.install-tmp
+*.zip
+*.jpg
+.git

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}
+강의 검색
+{% endblock %}
+
+{% block page_header %}
+강의 검색
+{% endblock %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h3>강의 검색</h3>
+
+    <p>
+        과목명, 과목코드 또는 담당 교수로 강의를 검색합니다.
+    </p>
+
+</div>
+
+
+<div class="card"
+     style="margin-bottom:20px;">
+
+    <form method="GET">
+
+        <div style="
+            display:flex;
+            gap:10px;
+        ">
+
+            <input
+                type="text"
+                name="keyword"
+                value="{{ keyword }}"
+                placeholder="검색어를 입력하세요"
+            >
+
+            <button
+                type="submit"
+                style="
+                    width:100px;
+                    flex-shrink:0;
+                "
+            >
+                검색
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+{% if keyword %}
+<div class="page-title" style="margin-bottom:10px;">
+    <p>
+	'{{ keyword | safe }}' 검색 결과입니다.
+    </p>
+</div>
+{% endif %}
+
+
+<div class="card">
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>과목 코드</th>
+                <th>과목명</th>
+                <th>담당 교수</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for course in courses %}
+
+            <tr>
+
+                <td>
+                    {{ course.course_code }}
+                </td>
+
+                <td>
+                    {{ course.course_name }}
+                </td>
+
+                <td>
+                    {{ course.professor }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

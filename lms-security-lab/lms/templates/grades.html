@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+성적 조회
+{% endblock %}
+
+{% block page_header %}
+성적 조회
+{% endblock %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h3>성적 조회</h3>
+
+    <p>
+        현재 수강 과목의 성적을 확인합니다.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>과목 코드</th>
+                <th>과목명</th>
+                <th>담당 교수</th>
+                <th>점수</th>
+                <th>등급</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for grade in grades %}
+
+            <tr>
+
+                <td>
+                    {{ grade.course_code }}
+                </td>
+
+                <td>
+                    {{ grade.course_name }}
+                </td>
+
+                <td>
+                    {{ grade.professor }}
+                </td>
+
+                <td>
+                    {{ grade.score }}
+                </td>
+
+                <td>
+                    <strong>
+                        {{ grade.letter_grade }}
+                    </strong>
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}
